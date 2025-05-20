@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b41976fd-083f-47cd-9e17-683988a3bbdb" name="Changes" comment="# 1. Signin logic&#10; - Добавлены контроллеры для регистрации  пользователя, а также отработка ошибок&#10; - Добавлены новые утилиты, такие как для генерации JWT-токена&#10; - Описана модель для пользователя">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/lib/cloudinary.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/middleware/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env.default" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env.default" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/auth.controller.js" afterDir="false" />
+    <list default="true" id="b41976fd-083f-47cd-9e17-683988a3bbdb" name="Changes" comment="# 2. Login , Logiut and Update Profile logic&#10;* add login logic&#10;* add logout logic&#10;* add update profile route logic&#10;* add checkAuth route&#10;* add cloudinary for users avatars">
+      <change afterPath="$PROJECT_DIR$/backend/src/controllers/message.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/models/message.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/routes/message.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/lib/utils.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/auth.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/auth.route.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +44,8 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature-PRJ-xxx-add-signin-controller-logic",
+    "git-widget-placeholder": "feature/PRJ-xxx-add-message-routers-for-app",
+    "last_opened_file_path": "C:/Users/Маша/Desktop/other/Обучение/chattify/backend/src/controllers",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,6 +59,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Маша\Desktop\other\Обучение\chattify\backend\src\controllers" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Маша\Desktop\other\Обучение\chattify\backend\src" />
     </key>
@@ -117,7 +113,8 @@
       <workItem from="1745578249041" duration="84000" />
       <workItem from="1745578339406" duration="3372000" />
       <workItem from="1745584165536" duration="19000" />
-      <workItem from="1747638234364" duration="5177000" />
+      <workItem from="1747638234364" duration="6657000" />
+      <workItem from="1747725235905" duration="2185000" />
     </task>
     <task id="LOCAL-00001" summary="# 1. Signin logic&#10; - Добавлены контроллеры для регистрации  пользователя, а также отработка ошибок&#10; - Добавлены новые утилиты, такие как для генерации JWT-токена&#10; - Описана модель для пользователя">
       <option name="closed" value="true" />
@@ -127,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745581605083</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="# 2. Login , Logiut and Update Profile logic&#10;* add login logic&#10;* add logout logic&#10;* add update profile route logic&#10;* add checkAuth route&#10;* add cloudinary for users avatars">
+      <option name="closed" value="true" />
+      <created>1747643684497</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747643684497</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -135,6 +140,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="# 1. Signin logic&#10; - Добавлены контроллеры для регистрации  пользователя, а также отработка ошибок&#10; - Добавлены новые утилиты, такие как для генерации JWT-токена&#10; - Описана модель для пользователя" />
-    <option name="LAST_COMMIT_MESSAGE" value="# 1. Signin logic&#10; - Добавлены контроллеры для регистрации  пользователя, а также отработка ошибок&#10; - Добавлены новые утилиты, такие как для генерации JWT-токена&#10; - Описана модель для пользователя" />
+    <MESSAGE value="# 2. Login , Logiut and Update Profile logic&#10;* add login logic&#10;* add logout logic&#10;* add update profile route logic&#10;* add checkAuth route&#10;* add cloudinary for users avatars" />
+    <option name="LAST_COMMIT_MESSAGE" value="# 2. Login , Logiut and Update Profile logic&#10;* add login logic&#10;* add logout logic&#10;* add update profile route logic&#10;* add checkAuth route&#10;* add cloudinary for users avatars" />
   </component>
 </project>
