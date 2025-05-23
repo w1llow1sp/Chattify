@@ -17,11 +17,11 @@ export const SignUpPage = () => {
     const { signup, isSigningUp } = useAuthStore();
 
     const validateForm = () => {
-        if (!formData.fullName.trim()) return toast.error("Full name is required");
-        if (!formData.email.trim()) return toast.error("Email is required");
-        if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
-        if (!formData.password) return toast.error("Password is required");
-        if (formData.password.length < 6) return toast.error("Password must be at least 6 characters");
+        if (!formData.fullName.trim()) return toast.error("Требуется полное имя");
+        if (!formData.email.trim()) return toast.error("Требуется электронная почта");
+        if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Неверный формат электронной почты");
+        if (!formData.password) return toast.error("Требуется пароль");
+        if (formData.password.length < 6) return toast.error("Пароль должен содержать не менее 6 символов");
 
         return true;
     };
@@ -48,15 +48,15 @@ export const SignUpPage = () => {
                             >
                                 <MessageSquare className="size-6 text-primary" />
                             </div>
-                            <h1 className="text-2xl font-bold mt-2">Create Account</h1>
-                            <p className="text-base-content/60">Get started with your free account</p>
+                            <h1 className="text-2xl font-bold mt-2">Зарегистрироваться</h1>
+                            <p className="text-base-content/60">Начните работу с бесплатной учетной записью</p>
                         </div>
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium">Full Name</span>
+                                <span className="label-text font-medium">Полное имя</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -92,7 +92,7 @@ export const SignUpPage = () => {
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-medium">Password</span>
+                                <span className="label-text font-medium">Пароль</span>
                             </label>
                             <div className="relative">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -123,7 +123,7 @@ export const SignUpPage = () => {
                             {isSigningUp ? (
                                 <>
                                     <Loader2 className="size-5 animate-spin" />
-                                    Loading...
+                                    Загрузка...
                                 </>
                             ) : (
                                 "Create Account"
@@ -133,9 +133,9 @@ export const SignUpPage = () => {
 
                     <div className="text-center">
                         <p className="text-base-content/60">
-                            Already have an account?{" "}
+                            У вас уже есть аккаунт?{" "}
                             <Link to="/login" className="link link-primary">
-                                Sign in
+                                Войти
                             </Link>
                         </p>
                     </div>
@@ -145,8 +145,8 @@ export const SignUpPage = () => {
             {/* right side */}
 
             <AuthImagePattern
-                title="Join our community"
-                subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
+                title="Присоединяйтесь к нашему сообществу"
+                subtitle="Общайтесь с друзьями, делитесь моментами и оставайтесь на связи с близкими."
             />
         </div>
     );
