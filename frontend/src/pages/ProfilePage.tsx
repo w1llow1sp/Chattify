@@ -6,8 +6,13 @@ export const ProfilePage = () => {
 
     const {authUser, isUpdatingProfile, updateProfile} = useAuthStore()
     const [selectedImg, setSelectedImg] = useState<string>('');
+    const dateFormatter = (date: string | undefined) => {
+      if (typeof date ==='undefined') return ''
+        const [year, mouth, day] = date.split('-')
+        return `${day}.${mouth}.${year}`
+    }
 
-    const handleImageUpload = async (e:ChangeEvent<HTMLInputElement>) => {
+    const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) {
             return;
         }
@@ -20,10 +25,13 @@ export const ProfilePage = () => {
 
         reader.onload = async () => {
             const base64Image = reader.result as string;
-            setSelectedImg(base64Image );
+            setSelectedImg(base64Image);
             await updateProfile({profilePic: base64Image});
         };
     };
+
+    console.log('create at', authUser?.createdAt?.split("T")[0])
+
     return (
         <div className="h-screen pt-20">
             <div className="max-w-2xl mx-auto p-4 py-8">
@@ -91,7 +99,9 @@ export const ProfilePage = () => {
                         <div className="space-y-3 text-sm">
                             <div className="flex items-center justify-between py-2 border-b border-zinc-700">
                                 <span>Участник с</span>
-                                <span>{authUser?.createdAt?.split("T")[0]}</span>
+                                <span>{
+                                    dateFormatter(authUser?.createdAt?.split("T")[0])
+                                }</span>
                             </div>
                             <div className="flex items-center justify-between py-2">
                                 <span>Статус аккаунта</span>
