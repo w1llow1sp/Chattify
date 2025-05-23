@@ -1,11 +1,14 @@
 import {create} from "zustand";
 import {axiosInstance} from "../lib/axios.ts";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 interface User {
     id: string;
-    username: string;
     email: string;
+    fullName:string;
+    profilePic: string ;
+    createdAt:string;
 }
 
 export interface SignupData {
@@ -38,6 +41,7 @@ interface AuthStoreState {
     signup: (data: SignupData) => Promise<void>;
     login: (data: LoginData) => Promise<void>;
     logout:() => Promise<void>;
+    updateProfile: (data: { profilePic: string}) => Promise<void>;
 }
 
 export const useAuthStore = create<AuthStoreState>((set) => ({
@@ -64,12 +68,15 @@ export const useAuthStore = create<AuthStoreState>((set) => ({
         try {
             const res = await axiosInstance.post("/auth/signup", data);
             set({ authUser: res.data });
-            toast.success("Account created successfully");
-        } catch (error) {
-            if(error instanceof Error){
-                toast.success(error.message);
+            toast.success("Аккаунт успешно создан");
+        } catch (error:unknown) {
+            if(axios.isAxiosError(error) && error.response) {
+                const errorMessage = (error.response.data as ResponseError['response']['data']).message
+                    || 'Произошла ошибка во время регистрации';
+                toast.error(errorMessage);
             } else {
-                console.error(error)
+                console.error(error);
+                toast.error("Произошла непредвиденная ошибка");
             }
         } finally {
             set({ isSigningUp: false });
@@ -81,12 +88,15 @@ export const useAuthStore = create<AuthStoreState>((set) => ({
         try {
             const res = await axiosInstance.post("/auth/login", data);
             set({ authUser: res.data });
-            toast.success("Logged in successfully");
+            toast.success("Вы успешно вошли в систему");
         } catch (error:unknown) {
-            if(error instanceof Error){
-                toast.success(error.message);
+            if(axios.isAxiosError(error) && error.response) {
+                const errorMessage = (error.response.data as ResponseError['response']['data']).message
+                    || 'Произошла ошибка при входе в систему';
+                toast.error(errorMessage);
             } else {
-                console.error(error)
+                console.error(error);
+                toast.error("Произошла непредвиденная ошибка");
             }
         } finally {
             set({ isLoggingIn: false });
@@ -95,15 +105,38 @@ export const useAuthStore = create<AuthStoreState>((set) => ({
 
     logout: async () => {
         try {
-            await axiosInstance.post("/auth/logout");
+            await axiosInstance.post("/auth/logout")
             set({ authUser: null });
-            toast.success("Logged out successfully");
+            toast.success("Вышли из системы успешно");
         } catch (error:unknown) {
-            if(error instanceof Error){
-                toast.success(error.message);
+            if(axios.isAxiosError(error) && error.response) {
+                const errorMessage = (error.response.data as ResponseError['response']['data']).message
+                    || 'Произошла ошибка при выходе из системы';
+                toast.error(errorMessage);
             } else {
-                console.error(error)
+                console.error(error);
+                toast.error("Произошла непредвиденная ошибка");
             }
         }
     },
+
+    updateProfile: async (data: { profilePic: string  }) => {
+       set({ isUpdatingProfile: true });
+       try {
+           const res = await axiosInstance.put("/auth/update-profile", data);
+           set({ authUser: res.data });
+           toast.success("Профиль успешно обновлен");
+       } catch (error:unknown) {
+           if(axios.isAxiosError(error) && error.response) {
+               const errorMessage = (error.response.data as ResponseError['response']['data']).message
+                   || 'Произошла ошибка при обновлении профиля';
+               toast.error(errorMessage);
+           } else {
+               console.error(error);
+               toast.error("Произошла непредвиденная ошибка");
+           }
+       } finally {
+           set({ isUpdatingProfile: false });
+       }
+    }
 }));

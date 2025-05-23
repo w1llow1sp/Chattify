@@ -28,19 +28,19 @@ export const Navbar = () => {
                             className={`btn btn-soft btn-sm`}
                         >
                             <Settings className="w-4 h-4" />
-                            <span className="hidden sm:inline">Settings</span>
+                            <span className="hidden sm:inline">Настройки</span>
                         </Link>
 
                         {authUser && (
                             <>
                                 <Link to={"/profile"} className={`btn btn-soft btn-sm gap-2`}>
                                     <User className="size-5" />
-                                    <span className="hidden sm:inline">Profile</span>
+                                    <span className="hidden sm:inline">Профиль</span>
                                 </Link>
 
                                 <button className="flex gap-2 items-center" onClick={logout}>
                                     <LogOut className="size-5" />
-                                    <span className="hidden sm:inline">Logout</span>
+                                    <span className="hidden sm:inline">Выход</span>
                                 </button>
                             </>
                         )}
