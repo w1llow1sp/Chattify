@@ -10,10 +10,12 @@ import {Loader} from "lucide-react";
 import {SignUpPage} from "./pages/SignupPage.tsx";
 import {LoginPage} from "./pages/LoginPage.tsx";
 import {Toaster} from "react-hot-toast";
+import {useThemeStore} from "./store/useThemeStore.ts";
 
 
 function App() {
     const {authUser, checkAuth, isCheckingAuth} = useAuthStore()
+    const { theme } = useThemeStore();
 
     useEffect(() => {
         checkAuth()
@@ -21,14 +23,17 @@ function App() {
 
     console.log({ authUser });
 
-    if (isCheckingAuth && !checkAuth) return (
+
+    if (isCheckingAuth && !authUser) return (
         <div className={'flex items-center justify-center h-screen'}>
             <Loader className={'size-10 animate-spin'}/>
         </div>
     )
+
     return (
-        <div>
-            <Navbar/>
+        <div data-theme={theme}>
+            <Navbar />
+
             <Routes>
                 <Route path="/" element={authUser ? <HomePage /> : <Navigate to="/login" />} />
                 <Route path="/signup" element={!authUser ? <SignUpPage /> : <Navigate to="/" />} />
@@ -37,9 +42,9 @@ function App() {
                 <Route path="/profile" element={authUser ? <ProfilePage /> : <Navigate to="/login" />} />
             </Routes>
 
-            <Toaster/>
+            <Toaster />
         </div>
-    )
+    );
 }
 
 export default App

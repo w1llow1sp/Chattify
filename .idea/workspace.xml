@@ -5,14 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b41976fd-083f-47cd-9e17-683988a3bbdb" name="Changes" comment="# 1. Login and Signup pages&#10; * add  routes&#10; * add axios &#10; * add zustand store for login, logout and signup&#10; * protect routes  (semi-ready)&#10; * add templates for pages &#10; * fix backend cors policy&#10; * add decoration component for login and signup page">
-      <change afterPath="$PROJECT_DIR$/frontend/public/avatar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/consts/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/store/useThemeStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/LoginPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/LoginPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SignupPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SignupPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/store/useAuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/useAuthStore.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SettingPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SettingPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -49,9 +48,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.index.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/prj-xxx-profile-page",
+    "git-widget-placeholder": "feature/prj-xxx-add-setting-page-content",
     "last_opened_file_path": "C:/Users/Маша/Desktop/other/Обучение/chattify/frontend/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -76,7 +76,10 @@
       <recent name="C:\Users\Маша\Desktop\other\Обучение\chattify\backend\src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="Node.js.index.js">
+    <configuration name="index.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/../../../index.js" working-dir="$PROJECT_DIR$/../../..">
+      <method v="2" />
+    </configuration>
     <configuration name="dev (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/backend/package.json" />
       <command value="run" />
@@ -99,6 +102,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.index.js" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.dev (1)" />
       </list>
@@ -168,9 +172,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/store/useAuthStore.ts</url>
-          <line>105</line>
-          <properties lambdaOrdinal="-1" />
+          <line>106</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/store/useAuthStore.ts</url>
+          <line>54</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
