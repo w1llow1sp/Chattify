@@ -3,12 +3,15 @@ import {axiosInstance} from "../lib/axios.ts";
 import toast from "react-hot-toast";
 import axios from "axios";
 
-interface User {
+export interface User {
     id: string;
-    email: string;
-    fullName:string;
-    profilePic: string ;
-    createdAt:string;
+    _id: string;
+    email: string
+    fullName: string
+    password: string
+    profilePic: string
+    createdAt:Date;
+    updatedAt:Date
 }
 
 export interface SignupData {
@@ -36,6 +39,7 @@ interface AuthStoreState {
     isLoggingIn: boolean;
     isUpdatingProfile: boolean;
     isCheckingAuth: boolean;
+    onlineUsers: string[];
 
     checkAuth: () => Promise<void>;
     signup: (data: SignupData) => Promise<void>;
@@ -50,6 +54,7 @@ export const useAuthStore = create<AuthStoreState>((set) => ({
     isLoggingIn: false,
     isUpdatingProfile: false,
     isCheckingAuth: true,
+    onlineUsers:[],
 
     checkAuth: async () => {
         try {
@@ -108,7 +113,8 @@ export const useAuthStore = create<AuthStoreState>((set) => ({
             await axiosInstance.post("/auth/logout")
             set({ authUser: null });
             toast.success("Вышли из системы успешно");
-        } catch (error:unknown) {
+        }
+        catch (error:unknown) {
             if(axios.isAxiosError(error) && error.response) {
                 const errorMessage = (error.response.data as ResponseError['response']['data']).message
                     || 'Произошла ошибка при выходе из системы';
