@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b41976fd-083f-47cd-9e17-683988a3bbdb" name="Changes" comment="# 1. Login and Signup pages&#10; * add  routes&#10; * add axios &#10; * add zustand store for login, logout and signup&#10; * protect routes  (semi-ready)&#10; * add templates for pages &#10; * fix backend cors policy&#10; * add decoration component for login and signup page">
-      <change afterPath="$PROJECT_DIR$/frontend/src/consts/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/store/useThemeStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ChatContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/ChatHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/MessageInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/NoChatSelected.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/Sidebar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/skeletons/MessageSkeleton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/components/skeletons/SidebarSkeleton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/lib/utils.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/store/useChatStore.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ProfilePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/SettingPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/SettingPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/controllers/message.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/message.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/routes/message.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/message.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/store/useAuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/useAuthStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +44,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -51,7 +59,7 @@
     "Node.js.index.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/prj-xxx-add-setting-page-content",
+    "git-widget-placeholder": "feature/prj-xxx-add-homepage-content",
     "last_opened_file_path": "C:/Users/Маша/Desktop/other/Обучение/chattify/frontend/public",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -172,14 +180,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/store/useAuthStore.ts</url>
-          <line>106</line>
+          <line>111</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/store/useAuthStore.ts</url>
-          <line>54</line>
-          <properties lambdaOrdinal="-1" />
+          <line>59</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/store/useChatStore.ts</url>
+          <line>73</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/frontend/src/components/MessageInput.tsx</url>
+          <line>11</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/backend/src/controllers/message.controller.js</url>
+          <line>45</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -18,26 +18,26 @@ export const getUsersForSidebar = async (req, res) => {
 
 export const getMessages = async (req, res) => {
     try {
-        const {id: userToChatId} = req.user;
+        const { id: userToChatId } = req.params;
         const myId = req.user._id;
 
         const messages = await Message.find({
             $or: [
-                {senderId: myId, receiverId: userToChatId},
-                {senderId: userToChatId, receiverId: myId}
-            ]
-        })
+                { senderId: myId, receiverId: userToChatId },
+                { senderId: userToChatId, receiverId: myId },
+            ],
+        });
 
         res.status(200).json(messages);
     } catch (error) {
-        console.error('Error in getMessages', error.message);
-        res.status(500).json({error: "Internal Server Error"});
+        console.log("Error in getMessages controller: ", error.message);
+        res.status(500).json({ error: "Internal server error" });
     }
 }
 
 export const sendMessage = async (req, res) => {
     try {
-        const {text, image} = req.body
+        const {text, image} = req.body;
         const {id: receiverId} = req.params;
         const senderId = req.user._id;
 
@@ -55,11 +55,10 @@ export const sendMessage = async (req, res) => {
         })
 
         await newMessage.save();
-        // TODO: realtime functionality goes here  => soket.io
 
-        res.status(200).json(newMessage);
+        res.status(201).json(newMessage);
     } catch (error) {
-        console.error('Error in sendMessage', error.message);
-        res.status(500).json({error: "Internal Server Error"});
+        console.log("Error in sendMessage controller: ", error.message);
+        res.status(500).json({error: "Internal server error"});
     }
 }
