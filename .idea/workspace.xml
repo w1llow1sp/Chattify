@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b41976fd-083f-47cd-9e17-683988a3bbdb" name="Changes" comment="# 1. Login and Signup pages&#10; * add  routes&#10; * add axios &#10; * add zustand store for login, logout and signup&#10; * protect routes  (semi-ready)&#10; * add templates for pages &#10; * fix backend cors policy&#10; * add decoration component for login and signup page">
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ChatContainer.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/ChatHeader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/MessageInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/NoChatSelected.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/Sidebar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/skeletons/MessageSkeleton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/components/skeletons/SidebarSkeleton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/lib/utils.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/store/useChatStore.ts" afterDir="false" />
+    <list default="true" id="b41976fd-083f-47cd-9e17-683988a3bbdb" name="Changes" comment="# 1 Homepage components&#10;* Add components for chat&#10;* Add dispaying users&#10;* Add sidebar&#10;* Refactor backend route for post message to user">
+      <change afterPath="$PROJECT_DIR$/backend/src/lib/socket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/controllers/message.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/controllers/message.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routes/message.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routes/message.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/HomePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/store/useAuthStore.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/store/useAuthStore.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -54,25 +45,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.index.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "feature/prj-xxx-add-homepage-content",
-    "last_opened_file_path": "C:/Users/Маша/Desktop/other/Обучение/chattify/frontend/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev (1).executor": "Run",
-    "npm.dev.executor": "Run",
-    "settings.editor.selected.configurable": "settings.qodana",
-    "ts.external.directory.path": "C:\\Users\\Маша\\Desktop\\other\\Обучение\\chattify\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/prj-xxx-add-homepage-content&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;20.17.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;20.17.55&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Маша/Desktop/other/Обучение/chattify/frontend/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev (1).executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Маша\\Desktop\\other\\Обучение\\chattify\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Маша\Desktop\other\Обучение\chattify\frontend\public" />
@@ -138,6 +131,7 @@
       <workItem from="1747638234364" duration="6657000" />
       <workItem from="1747725235905" duration="2185000" />
       <workItem from="1748003124481" duration="10684000" />
+      <workItem from="1748612147614" duration="2834000" />
     </task>
     <task id="LOCAL-00001" summary="# 1. Signin logic&#10; - Добавлены контроллеры для регистрации  пользователя, а также отработка ошибок&#10; - Добавлены новые утилиты, такие как для генерации JWT-токена&#10; - Описана модель для пользователя">
       <option name="closed" value="true" />
@@ -155,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747643684497</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="# 1 Homepage components&#10;* Add components for chat&#10;* Add dispaying users&#10;* Add sidebar&#10;* Refactor backend route for post message to user">
+      <option name="closed" value="true" />
+      <created>1748258311991</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748258311991</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,7 +167,8 @@
     <MESSAGE value="# 1. Signin logic&#10; - Добавлены контроллеры для регистрации  пользователя, а также отработка ошибок&#10; - Добавлены новые утилиты, такие как для генерации JWT-токена&#10; - Описана модель для пользователя" />
     <MESSAGE value="# 2. Login , Logiut and Update Profile logic&#10;* add login logic&#10;* add logout logic&#10;* add update profile route logic&#10;* add checkAuth route&#10;* add cloudinary for users avatars" />
     <MESSAGE value="# 1. Login and Signup pages&#10; * add  routes&#10; * add axios &#10; * add zustand store for login, logout and signup&#10; * protect routes  (semi-ready)&#10; * add templates for pages &#10; * fix backend cors policy&#10; * add decoration component for login and signup page" />
-    <option name="LAST_COMMIT_MESSAGE" value="# 1. Login and Signup pages&#10; * add  routes&#10; * add axios &#10; * add zustand store for login, logout and signup&#10; * protect routes  (semi-ready)&#10; * add templates for pages &#10; * fix backend cors policy&#10; * add decoration component for login and signup page" />
+    <MESSAGE value="# 1 Homepage components&#10;* Add components for chat&#10;* Add dispaying users&#10;* Add sidebar&#10;* Refactor backend route for post message to user" />
+    <option name="LAST_COMMIT_MESSAGE" value="# 1 Homepage components&#10;* Add components for chat&#10;* Add dispaying users&#10;* Add sidebar&#10;* Refactor backend route for post message to user" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -180,30 +183,27 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/store/useAuthStore.ts</url>
-          <line>111</line>
+          <line>114</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/store/useAuthStore.ts</url>
-          <line>59</line>
+          <line>61</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/store/useChatStore.ts</url>
           <line>73</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/frontend/src/components/MessageInput.tsx</url>
           <line>11</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/backend/src/controllers/message.controller.js</url>
           <line>45</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
