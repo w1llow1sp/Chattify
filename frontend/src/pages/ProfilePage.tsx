@@ -30,8 +30,6 @@ export const ProfilePage = () => {
         };
     };
 
-    console.log('create at', authUser?.createdAt?.split("T")[0])
-
     return (
         <div className="h-screen pt-20">
             <div className="max-w-2xl mx-auto p-4 py-8">
@@ -100,7 +98,7 @@ export const ProfilePage = () => {
                             <div className="flex items-center justify-between py-2 border-b border-zinc-700">
                                 <span>Участник с</span>
                                 <span>{
-                                    dateFormatter(authUser?.createdAt?.split("T")[0])
+                                    dateFormatter(authUser?.createdAt?.toString().split("T")[0])
                                 }</span>
                             </div>
                             <div className="flex items-center justify-between py-2">

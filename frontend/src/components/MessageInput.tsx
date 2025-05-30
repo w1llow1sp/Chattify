@@ -10,7 +10,10 @@ export const MessageInput = () => {
     const { sendMessage } = useChatStore();
 
     const handleImageChange = (e:ChangeEvent<HTMLInputElement>) => {
-        const file = e.target.files[0];
+        const files = e.target.files;
+        if (!files || files.length === 0) return;
+        
+        const file = files[0];
         if (!file.type.startsWith("image/")) {
             toast.error("Please select an image file");
             return;
