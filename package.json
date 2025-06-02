@@ -1,16 +1,32 @@
 {
   "name": "chattify",
   "version": "1.0.0",
+  "description": "Современное веб-приложение для мгновенного обмена сообщениями с поддержкой изображений и real-time коммуникации",
   "main": "index.js",
   "engines": {
     "node": "20.17.0"
   },
   "scripts": {
      "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
-    "start": "npm run start --prefix backend"
+    "start": "npm run start --prefix backend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "keywords": [
+    "chat",
+    "real-time",
+    "websocket",
+    "react",
+    "express",
+    "socket.io",
+    "mongodb",
+    "typescript",
+    "tailwind",
+    "messaging"
+  ],
+  "author": {
+    "name": "w1llow1sp",
+    "url": "https://github.com/w1llow1sp"
+  },
+  "license": "ISC"
 }
