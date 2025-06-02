@@ -2,7 +2,7 @@
 
 Современное веб-приложение для мгновенного обмена сообщениями с поддержкой изображений и real-time коммуникации.
 
-![Chattify Banner](https://via.placeholder.com/800x200/4F46E5/FFFFFF?text=Chattify+-+Real-time+Chat+App)
+![Chattify Banner](image.png)
 
 ## ✨ Особенности
 
